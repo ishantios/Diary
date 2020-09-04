@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="waV-qM-g0x">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Diary-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DIARY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-Sa-FZL">
+                                <rect key="frame" x="0.0" y="39" width="414" height="857"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uve-1B-ZpM">
+                                        <rect key="frame" x="32" y="50" width="350" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.2666666667" green="0.12941176469999999" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Add Content"/>
+                                        <connections>
+                                            <action selector="addContent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tje-JI-BA0"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dtd-qT-Imb">
+                                        <rect key="frame" x="0.0" y="102" width="414" height="745"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="yDK-q9-MPB"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="L8R-Rs-PVe"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="dtd-qT-Imb" firstAttribute="top" secondItem="uve-1B-ZpM" secondAttribute="bottom" constant="8" id="6zo-np-Aur"/>
+                                    <constraint firstItem="dtd-qT-Imb" firstAttribute="leading" secondItem="Zz6-Sa-FZL" secondAttribute="leading" id="gqq-Ob-R3l"/>
+                                    <constraint firstAttribute="bottom" secondItem="dtd-qT-Imb" secondAttribute="bottom" constant="10" id="rJV-Bx-wyP"/>
+                                    <constraint firstAttribute="trailing" secondItem="dtd-qT-Imb" secondAttribute="trailing" id="s1s-AC-47I"/>
+                                    <constraint firstItem="dtd-qT-Imb" firstAttribute="top" secondItem="uve-1B-ZpM" secondAttribute="bottom" constant="8" id="ztz-TK-9Ed"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zz6-Sa-FZL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="39" id="Ms2-XR-ScC"/>
+                            <constraint firstItem="Zz6-Sa-FZL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dEF-7y-dy7"/>
+                            <constraint firstItem="Zz6-Sa-FZL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uaN-sS-0IZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Zz6-Sa-FZL" secondAttribute="bottom" id="zzF-MX-OPc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Diary" id="nEh-s6-7ON"/>
+                    <connections>
+                        <outlet property="btnAdd" destination="uve-1B-ZpM" id="Dhw-j6-aoL"/>
+                        <outlet property="tblContent" destination="dtd-qT-Imb" id="TAq-1X-Wwb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598.55072463768124" y="151.33928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bi1-v8-Hen">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="waV-qM-g0x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xpp-HN-lVh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tGa-MK-son"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgR-IY-NJ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.014492753623188" y="144.64285714285714"/>
+        </scene>
+    </scenes>
+</document>
